@@ -1,10 +1,12 @@
-# cowshare/admin.py
+ # cowshare/admin.py
 from django.contrib import admin
 from django.contrib.auth import get_user_model
 from django.contrib.auth.admin import UserAdmin
 
 from .forms import CustomUserCreationForm, CustomUserChangeForm
 from .models import CustomUser, Category, Product, SubCategory
+
+admin.site.register(Product)
 
 class CustomUserAdmin(UserAdmin):
     add_form = CustomUserCreationForm
@@ -23,7 +25,7 @@ class CategoryAdmin(admin.ModelAdmin):
 class SubCategoryAdmin(admin.ModelAdmin):
     list_display = ['name']
     
-@admin.register(Product)
+
 class ProductAdmin(admin.ModelAdmin):
     list_display = ['name', 'price', 'description',
                     'available', 'created', 'updated']

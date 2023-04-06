@@ -14,7 +14,7 @@ class Category(models.Model):
         ordering = ['name']
         indexes = [models.Index(fields=['name'])]    
         verbose_name = 'category'
-        verbose_name_plural = 'categories'
+        verbose_name_plural = 'Categories'
         
     def __str__(self):
         return self.name
